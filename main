@@ -1,0 +1,29 @@
+```python
+import math
+
+def solve_quadratic(a, b, c):
+    discriminant = b**2 - 4*a*c
+    if discriminant > 0:
+        root1 = (-b + math.sqrt(discriminant)) / (2*a)
+        root2 = (-b - math.sqrt(discriminant)) / (2*a)
+        return root1, root2
+    elif discriminant == 0:
+        root = -b / (2*a)
+        return root,
+    else:
+        return None
+
+# Пример использования
+a = 1
+b = -3
+c = 2
+roots = solve_quadratic(a, b, c)
+
+if roots:
+    if len(roots) == 2:
+        print(f"Корни уравнения: x1 = {roots[0]}, x2 = {roots[1]}")
+    else:
+        print(f"Уравнение имеет один корень: x = {roots[0]}")
+else:
+    print("Уравнение не имеет действительных корней.")
+```
